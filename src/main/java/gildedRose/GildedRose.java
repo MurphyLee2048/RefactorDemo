@@ -10,7 +10,6 @@ public class GildedRose {
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             updateItemQuality(items[i]);
-            updateItemSellIn(items[i]);
         }
     }
 
@@ -42,6 +41,8 @@ public class GildedRose {
             }
         }
 
+        updateSellIn(item);
+
         if (item.sellIn < 0) {
             if (!item.name.equals("Aged Brie")) {
                 if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -61,7 +62,7 @@ public class GildedRose {
         }
     }
 
-    public void updateItemSellIn(Item item) {
+    public void updateSellIn(Item item) {
         if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
             item.sellIn = item.sellIn - 1;
         }

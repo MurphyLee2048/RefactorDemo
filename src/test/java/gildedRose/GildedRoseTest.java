@@ -199,4 +199,15 @@ public class GildedRoseTest {
 
         assertEquals(50, items[0].quality);
     }
+
+    @Test
+    public void should_return_quality_49_when_updateQuality_given_name_other_quality_50_and_sellIn_0() {
+        Item[] items = {new Item("other", 0, 50)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(48, items[0].quality);
+        assertEquals(-1, items[0].sellIn);
+    }
 }

@@ -1,4 +1,5 @@
 package gildedRose;
+
 public class GildedRose {
     Item[] items;
 
@@ -35,10 +36,6 @@ public class GildedRose {
                 }
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
-
             if (items[i].sellIn < 0) {
                 if (!items[i].name.equals("Aged Brie")) {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -56,6 +53,12 @@ public class GildedRose {
                     }
                 }
             }
+        }
+    }
+
+    public void updateSellIn(Item item) {
+        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            item.sellIn = item.sellIn - 1;
         }
     }
 }

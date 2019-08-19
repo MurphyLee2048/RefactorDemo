@@ -39,13 +39,13 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_51_when_updateQuality_given_name_aged_brie_and_quality_51() {
-        Item[] items = {new Item("Aged Brie", 1, 51)};
+    public void should_return_50_when_updateQuality_given_name_aged_brie_and_quality_50() {
+        Item[] items = {new Item("Aged Brie", 1, 50)};
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
 
-        assertEquals(51, items[0].quality);
+        assertEquals(50, items[0].quality);
     }
 
     @Test
@@ -59,8 +59,8 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_2_when_updateQuality_given_name_backstage_sellIn_12_quality_1() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 12, 1)};
+    public void should_return_2_when_updateQuality_given_name_backstage_sellIn_11_quality_1() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 11, 1)};
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
@@ -69,12 +69,44 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_51_when_updateQuality_given_name_backstage_sellIn_10_quality_51() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 51)};
+    public void should_return_50_when_updateQuality_given_name_backstage_sellIn_10_quality_50() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 50)};
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
 
-        assertEquals(51, items[0].quality);
+        assertEquals(50, items[0].quality);
     }
+
+    @Test
+    public void should_return_50_when_updateQuality_given_name_backstage_sellIn_10_quality_49() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+    }
+
+    @Test
+    public void should_return_50_when_updateQuality_given_name_backstage_sellIn_10_quality_48() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 48)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+    }
+
+    @Test
+    public void should_return_50_when_updateQuality_given_name_backstage_sellIn_5_quality_49() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
+    }
+
+
 }

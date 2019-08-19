@@ -39,7 +39,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_1_when_updateQuality_given_name_aged_brie_and_quality_51() {
+    public void should_return_51_when_updateQuality_given_name_aged_brie_and_quality_51() {
         Item[] items = {new Item("Aged Brie", 1, 51)};
         GildedRose gildedRose = new GildedRose(items);
 
@@ -66,5 +66,15 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
 
         assertEquals(2, items[0].quality);
+    }
+
+    @Test
+    public void should_return_51_when_updateQuality_given_name_backstage_sellIn_10_quality_51() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 10, 51)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(51, items[0].quality);
     }
 }

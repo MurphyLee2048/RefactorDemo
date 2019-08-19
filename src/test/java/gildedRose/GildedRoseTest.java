@@ -181,12 +181,22 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_quality_0_when_updateQuality_given_name_backstage_quality_1_and_sellIn_negative_1() {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", -1, 2)};
+    public void should_return_quality_50_when_updateQuality_given_name_aged_brie_quality_49_and_sellIn_negative_1() {
+        Item[] items = {new Item("Aged Brie", -1, 49)};
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
 
-        assertEquals(0, items[0].quality);
+        assertEquals(50, items[0].quality);
+    }
+
+    @Test
+    public void should_return_quality_50_when_updateQuality_given_name_aged_brie_quality_50_and_sellIn_negative_1() {
+        Item[] items = {new Item("Aged Brie", -1, 50)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, items[0].quality);
     }
 }

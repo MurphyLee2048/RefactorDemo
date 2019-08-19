@@ -37,4 +37,14 @@ public class GildedRoseTest {
 
         assertEquals(0, items[0].quality);
     }
+
+    @Test
+    public void should_return_2_when_updateQuality_given_name_aged_brie_and_quality_1() {
+        Item[] items = {new Item("Aged Brie", 1, 1)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(2, items[0].quality);
+    }
 }

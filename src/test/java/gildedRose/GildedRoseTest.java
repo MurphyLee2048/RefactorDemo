@@ -169,4 +169,14 @@ public class GildedRoseTest {
 
         assertEquals(1, items[0].quality);
     }
+
+    @Test
+    public void should_return_quality_0_when_updateQuality_given_name_sulfuras_quality_0_and_sellIn_negative_1() {
+        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", -1, 0)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(0, items[0].quality);
+    }
 }

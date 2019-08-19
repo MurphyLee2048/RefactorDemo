@@ -128,4 +128,14 @@ public class GildedRoseTest {
         assertEquals(50, items[0].quality);
     }
 
+
+    @Test
+    public void should_return_sellIn_9_when_updateSellIn_given_name_other_and_sellIn_10(){
+        Item[] items = {new Item("other", 10, 1)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(9, items[0].sellIn);
+    }
 }

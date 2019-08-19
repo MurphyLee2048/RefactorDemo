@@ -2,7 +2,7 @@ package gildedRose;
 
 public class Item {
 
-    public String name;
+    public String name;  // TODO：private？
 
     public int sellIn;
 

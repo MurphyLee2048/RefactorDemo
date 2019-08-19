@@ -130,7 +130,7 @@ public class GildedRoseTest {
 
 
     @Test
-    public void should_return_sellIn_9_when_updateSellIn_given_name_other_and_sellIn_10(){
+    public void should_return_sellIn_9_when_updateQuality_given_name_other_and_sellIn_10() {
         Item[] items = {new Item("other", 10, 1)};
         GildedRose gildedRose = new GildedRose(items);
 
@@ -140,12 +140,23 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_return_sellIn_10_when_updateSellIn_given_name_sulfuras_and_sellIn_10(){
+    public void should_return_sellIn_10_when_updateQuality_given_name_sulfuras_and_sellIn_10() {
         Item[] items = {new Item("Sulfuras, Hand of Ragnaros", 10, 1)};
         GildedRose gildedRose = new GildedRose(items);
 
         gildedRose.updateQuality();
 
         assertEquals(10, items[0].sellIn);
+    }
+
+
+    @Test
+    public void should_return_quality_0_when_updateQuality_given_name_other_quality_1_and_sellIn_negative_1() {
+        Item[] items = {new Item("other", -1, 1)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(0, items[0].quality);
     }
 }

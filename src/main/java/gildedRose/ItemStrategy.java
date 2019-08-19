@@ -1,5 +1,5 @@
 package gildedRose;
 
 public interface ItemStrategy {
-    public void updateItemQuality();
+    public void updateItemQuality(Item item);
 }

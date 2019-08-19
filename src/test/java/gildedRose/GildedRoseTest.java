@@ -47,4 +47,14 @@ public class GildedRoseTest {
 
         assertEquals(2, items[0].quality);
     }
+
+    @Test
+    public void should_return_2_when_updateQuality_given_name_backstage_sellIn_12_quality_1() {
+        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", 12, 1)};
+        GildedRose gildedRose = new GildedRose(items);
+
+        gildedRose.updateQuality();
+
+        assertEquals(2, items[0].quality);
+    }
 }
